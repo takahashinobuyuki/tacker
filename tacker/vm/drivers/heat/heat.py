@@ -41,12 +41,12 @@ OPTS = [
                help=_("Heat server address to create services "
                       "specified in the service chain.")),
     cfg.IntOpt('stack_retries',
-               default=10,
+               default=60,
                help=_("Number of attempts to retry for stack deletion")),
     cfg.IntOpt('stack_retry_wait',
                default=5,
                help=_("Wait time between two successive stack delete "
-                      "retries")),
+                      "create/delete retries")),
 ]
 CONF.register_opts(OPTS, group='servicevm_heat')
 STACK_RETRIES = cfg.CONF.servicevm_heat.stack_retries
